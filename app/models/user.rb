@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+recommends :music
 before_save { self.email = email.downcase }
 before_create :create_remember_token
 validates :name, length: { maximum: 50}

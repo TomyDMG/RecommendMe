@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+
   resources :users
+  resources :music
+
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
+  get 'music/show'
+  #get 'likess' => 'music#likes', as: :likess
+  put ':id/likes' => 'music#likes', as: :likes
+  put ':id/dislikes' => 'music#dislikes', as: :dislikes
+  match '/popular',    to: 'music#popular',    via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'

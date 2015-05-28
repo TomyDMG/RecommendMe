@@ -1,0 +1,11 @@
+<% provide(:title, 'All musics') %>
+<h1>All musics</h1>
+
+<ul class="music">
+  <% @musics.each do |music| %>
+    <li>
+      <%= link_to music.artist, music %>
+      <%= link_to music.songname, music %>
+    </li>
+  <% end %>
+</ul>
