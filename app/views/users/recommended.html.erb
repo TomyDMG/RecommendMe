@@ -1,0 +1,18 @@
+<% provide(:title, 'Рекомендации') %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= 'Вам может понравится:' %>          
+      </h1>
+      <form>
+        <%= current_user.recommended_music.each do |m| %>
+        <tr>
+        <td><%= m.artist %></td> -
+        <td><%= m.songname %></td>; <br>
+        </tr>
+        <% end %>
+      </form>
+    </section>
+  </aside>
+</div>

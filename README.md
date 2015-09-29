@@ -1,5 +1,3 @@
-# Перевод Ruby on Rails Tutorial: пример приложения
+# Рекомендательный сервис для вкр.
 
-Это пример приложения для
-[*Ruby on Rails Tutorial*](http://railstutorial.org/)
-by [Майкл Хартл](http://michaelhartl.com/).
+Рекомендательный сервис для вкр.

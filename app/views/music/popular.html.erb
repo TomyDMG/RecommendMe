@@ -1,13 +1,13 @@
-<% provide(:title, 'popularnaya muzika') %>
+<% provide(:title, 'Популярная музыка') %>
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
-        <%= 'popularno u polzovatelei' %>          
+        <%= 'Популярно у пользователей' %>          
       </h1>
       <form>
-        <%= Music.top %>
-
+        <%= Music.top(count: 5).each {|s| s.songname} %>
+        <%= User.first.recommended_music.map {|m| m.songname} %>
       </form>
     </section>
   </aside>

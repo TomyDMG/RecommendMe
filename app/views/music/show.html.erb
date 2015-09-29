@@ -6,18 +6,10 @@
         <%= @music.artist %> - <%= @music.songname %>          
       </h1>
         <%= if current_user.likes?(Music.find(params[:id])) then 'Вам нравится эта песня' end %>
-      <%= button_to 'like', likes_path, :method => "put" %>
-      <%= button_to 'GOVNO OPUSKAIU VSEI DUSHOI', dislikes_path, :method => "put" %>
-      <a href onclick = "
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.open('put','<%= likes_path %>',true); 
-        xmlhttp.setRequestHeader('authenticity_token', 'HotwF/KO5JbM8fS/zXbxWQwYN3J4NBzf5sm2IAPApEo=');
-        xmlhttp.send();
-      ">sadsadad</a>
       <form>
         
-        <%= link_to 'Нравится!', likes_path, method: :put %>
-        <%= link_to 'Не нравится', dislikes_path, method: :put %>
+        <%= link_to 'Нравится!', likes_path, method: :put,  class: "btn btn-success" %>
+        <%= link_to 'Не нравится', dislikes_path, method: :put, class: "btn btn-danger" %>
       </form>
     </section>
   </aside>

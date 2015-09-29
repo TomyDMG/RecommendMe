@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
-  get 'music/show'
+
   #get 'likess' => 'music#likes', as: :likess
+  get '/recommendation', to: 'users#recommended', via: 'get'
   put ':id/likes' => 'music#likes', as: :likes
   put ':id/dislikes' => 'music#dislikes', as: :dislikes
   match '/popular',    to: 'music#popular',    via: 'get'

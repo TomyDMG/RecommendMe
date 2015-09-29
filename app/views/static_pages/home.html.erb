@@ -4,15 +4,16 @@
   <title><%= full_title(yield(:title)) %></title>
   <body>
 <div class="center hero-unit">
-  <h1>Welcome to the RecommendMe</h1>
-
+  <% if signed_in? %>
+  <h1>Добро пожаловать!</h1>
+  <h2>Для более точного прогноза, <%= link_to "оцените больше песен", music_index_path %>, которые вам нравятся.</h2>
+  <% else %>
+  <h1>Добро пожаловать на сервис RecommendMe</h1>
   <h2>
-    Пожалуйста зарегистрируйтесь, и оцените несколько песен.
+    Пожалуйста зарегистрируйтесь, и <%= link_to "оцените", music_index_path %> несколько песен. Чем больше песен вы оцените, тем точнее будут рекомендации.
   </h2>
-
   <%= link_to "Регистрация", signup_path, class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>
-
-
   </body>
 </html>

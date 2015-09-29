@@ -6,6 +6,15 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <form>
+        Вам недавно понравилось: <br>
+      </form>
+      <%= current_user.liked_music.each do |m| %>
+      <tr>
+        <td><%= m.artist %></td> -
+        <td><%= m.songname %></td>; <br>
+      </tr>
+      <% end %>
     </section>
   </aside>
 </div>

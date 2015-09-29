@@ -41,6 +41,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def rec
+    current_user.recommended_music.all
+  end
+  
 
     
   
